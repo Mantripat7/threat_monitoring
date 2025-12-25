@@ -1,0 +1,846 @@
+{
+	"info": {
+		"_postman_id": "1b82f813-c41b-4e43-b84d-9341359d6ffc",
+		"name": "Threat Monitoring API",
+		"description": "Backend API for Threat Monitoring & Alert Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43339686",
+		"_collection_link": "https://www.postman.com/grey-station-29265/threat-monitoring/collection/43339686-1b82f813-c41b-4e43-b84d-9341359d6ffc?action=share&source=collection_link&creator=43339686"
+	},
+	"item": [
+		{
+			"name": "alerts",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "alerts read",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY2NjU4MjkxLCJpYXQiOjE3NjY2NTY0OTEsImp0aSI6Ijg1MjYyNzM0NWFlMTQ1M2ZhOTNiYTJhZGFjNzRkN2IzIiwidXNlcl9pZCI6IjEifQ.tzgIcLNSEOKZlY2qs8hlk_rdCk9W023QQIcimW9dd0g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/alerts/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"alerts",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic <credentials>",
+												"description": "Added as a part of security scheme: basic"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/alerts/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alerts",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "string"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 422,\n  \"event_source\": \"string\",\n  \"event_type\": \"string\",\n  \"severity\": \"string\",\n  \"status\": \"Open\",\n  \"created_at\": \"1983-08-17T21:56:55.822Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "alerts partial update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY2NjU4MjkxLCJpYXQiOjE3NjY2NTY0OTEsImp0aSI6Ijg1MjYyNzM0NWFlMTQ1M2ZhOTNiYTJhZGFjNzRkN2IzIiwidXNlcl9pZCI6IjEifQ.tzgIcLNSEOKZlY2qs8hlk_rdCk9W023QQIcimW9dd0g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"status\": \"Open\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/alerts/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"alerts",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic <credentials>",
+												"description": "Added as a part of security scheme: basic"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"status\": \"Resolved\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/alerts/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alerts",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "string"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 422,\n  \"event_source\": \"string\",\n  \"event_type\": \"string\",\n  \"severity\": \"string\",\n  \"status\": \"Open\",\n  \"created_at\": \"1983-08-17T21:56:55.822Z\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "alerts list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY2NjU4MjkxLCJpYXQiOjE3NjY2NTY0OTEsImp0aSI6Ijg1MjYyNzM0NWFlMTQ1M2ZhOTNiYTJhZGFjNzRkN2IzIiwidXNlcl9pZCI6IjEifQ.tzgIcLNSEOKZlY2qs8hlk_rdCk9W023QQIcimW9dd0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/alerts/?page=1&page_size=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"alerts",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "A page number within the paginated result set."
+								},
+								{
+									"key": "page_size",
+									"value": "1",
+									"description": "Number of results to return per page."
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic <credentials>",
+										"description": "Added as a part of security scheme: basic"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/alerts/?page=3407&page_size=3407",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"alerts",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "3407",
+											"description": "A page number within the paginated result set."
+										},
+										{
+											"key": "page_size",
+											"value": "3407",
+											"description": "Number of results to return per page."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": 5703,\n  \"results\": [\n    {\n      \"id\": 42,\n      \"event_source\": \"string\",\n      \"event_type\": \"string\",\n      \"severity\": \"string\",\n      \"status\": \"Acknowledged\",\n      \"created_at\": \"1963-03-11T07:44:08.416Z\"\n    },\n    {\n      \"id\": 1845,\n      \"event_source\": \"string\",\n      \"event_type\": \"string\",\n      \"severity\": \"string\",\n      \"status\": \"Acknowledged\",\n      \"created_at\": \"2012-05-09T08:58:22.481Z\"\n    }\n  ],\n  \"next\": \"https://XfzJc.msdo2mVo95KKFNkJCDsCuIUiQve4DC0jg,S+rZdjf\",\n  \"previous\": \"https://OBWFeqZLlynUThgIrdfoKpK.jraVzvgCD7EkTk,T5Sg4zv-\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"item": [
+						{
+							"name": "auth login create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin@1234\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/login/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"login",
+										""
+									]
+								},
+								"description": "Takes a set of user credentials and returns an access and refresh JSON web  \ntoken pair to prove the authentication of those credentials."
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic <credentials>",
+												"description": "Added as a part of security scheme: basic"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"username\": \"string\",\n  \"password\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/auth/login/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												"login",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"username\": \"string\",\n  \"password\": \"string\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "refresh",
+					"item": [
+						{
+							"name": "auth refresh create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"refresh\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/refresh/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"refresh",
+										""
+									]
+								},
+								"description": "Takes a refresh type JSON web token and returns an access type JSON web\ntoken if the refresh token is valid."
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic <credentials>",
+												"description": "Added as a part of security scheme: basic"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"refresh\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/auth/refresh/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												"refresh",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"refresh\": \"string\",\n  \"access\": \"string\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "events",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "events read",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY2NjU4MjkxLCJpYXQiOjE3NjY2NTY0OTEsImp0aSI6Ijg1MjYyNzM0NWFlMTQ1M2ZhOTNiYTJhZGFjNzRkN2IzIiwidXNlcl9pZCI6IjEifQ.tzgIcLNSEOKZlY2qs8hlk_rdCk9W023QQIcimW9dd0g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/events/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "A unique integer value identifying this event."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic <credentials>",
+												"description": "Added as a part of security scheme: basic"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/events/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "3407",
+													"description": "A unique integer value identifying this event."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"source_name\": \"string\",\n  \"event_type\": \"string\",\n  \"severity\": \"Critical\",\n  \"description\": \"string\",\n  \"id\": 5453,\n  \"timestamp\": \"1980-05-13T03:24:26.708Z\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "events list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY2NjU4MjkxLCJpYXQiOjE3NjY2NTY0OTEsImp0aSI6Ijg1MjYyNzM0NWFlMTQ1M2ZhOTNiYTJhZGFjNzRkN2IzIiwidXNlcl9pZCI6IjEifQ.tzgIcLNSEOKZlY2qs8hlk_rdCk9W023QQIcimW9dd0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/events/?page=1&page_size=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"events",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "A page number within the paginated result set."
+								},
+								{
+									"key": "page_size",
+									"value": "1",
+									"description": "Number of results to return per page."
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic <credentials>",
+										"description": "Added as a part of security scheme: basic"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/events/?page=3407&page_size=3407",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "3407",
+											"description": "A page number within the paginated result set."
+										},
+										{
+											"key": "page_size",
+											"value": "3407",
+											"description": "Number of results to return per page."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": 1051,\n  \"results\": [\n    {\n      \"source_name\": \"string\",\n      \"event_type\": \"string\",\n      \"severity\": \"High\",\n      \"description\": \"string\",\n      \"id\": 725,\n      \"timestamp\": \"2012-12-30T01:45:45.230Z\"\n    },\n    {\n      \"source_name\": \"string\",\n      \"event_type\": \"string\",\n      \"severity\": \"Medium\",\n      \"description\": \"string\",\n      \"id\": 2221,\n      \"timestamp\": \"1973-11-21T02:01:11.645Z\"\n    }\n  ],\n  \"next\": \"http://LSwdG.wmegyw6LGkPq4o80ut2NdyULYZVTVOt1RZU19ZDzCDwdXV8P73LLLyoGzCZPJmN2H-s0yZG\",\n  \"previous\": \"https://DtJxBXfFaeKpzxiLoswKZBiGGxq.sjflAOjS9+MZWNDTGtQldqVk60UTqYpwS3GG,LVEd2LO+mwBC2X\"\n}"
+						}
+					]
+				},
+				{
+					"name": "events create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY2NjU4MjkxLCJpYXQiOjE3NjY2NTY0OTEsImp0aSI6Ijg1MjYyNzM0NWFlMTQ1M2ZhOTNiYTJhZGFjNzRkN2IzIiwidXNlcl9pZCI6IjEifQ.tzgIcLNSEOKZlY2qs8hlk_rdCk9W023QQIcimW9dd0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"source_name\": \"threat\",\n  \"event_type\": \"network\",\n  \"severity\": \"Critical\",\n  \"description\": \"Immediate action required\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/events/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"events",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic <credentials>",
+										"description": "Added as a part of security scheme: basic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"source_name\": \"string\",\n  \"event_type\": \"string\",\n  \"severity\": \"High\",\n  \"description\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/events/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"source_name\": \"string\",\n  \"event_type\": \"string\",\n  \"severity\": \"Critical\",\n  \"description\": \"string\",\n  \"id\": 5453,\n  \"timestamp\": \"1980-05-13T03:24:26.708Z\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://threat-monitoring-vmx6.onrender.com/api"
+		}
+	]
+}
