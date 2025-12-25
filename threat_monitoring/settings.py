@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-c=a-+$5ka(2!m=g1+heqrgftgn=)(&rx6_eoxyqy*8cem&*6pl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -145,8 +145,8 @@ REST_FRAMEWORK.update({
         "rest_framework.throttling.AnonRateThrottle",
     ],
     "DEFAULT_THROTTLE_RATES": {
-        "user": "1000/day",
-        "anon": "100/day",
+        "user": "10/minute",
+        "anon": "10/minute",
     },
 })
 LOGGING = {

@@ -18,5 +18,5 @@ def create_alert_for_critical_events(sender, instance, created, **kwargs):
         return
 
     if instance.severity in ["High", "Critical"]:
-        logger.info(f"Creating alert for critical event: {instance}")
+        logger.info(f"Creating alert for {instance.severity} event: {instance}")
         Alert.objects.create(event=instance)

@@ -13,13 +13,11 @@ class EventViewSet(ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     permission_classes = [IsAdminUserGroup]
-    authentication_classes = [BasicAuthentication, SessionAuthentication]
-    http_method_names = ["post"]
+
 
 
 class AlertViewSet(ModelViewSet):
     serializer_class = AlertSerializer
-    authentication_classes = [SessionAuthentication]
     permission_classes = [IsAnalystOrAdminReadOnly]
     http_method_names = ["get", "patch"]
     
