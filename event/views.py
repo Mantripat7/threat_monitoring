@@ -13,7 +13,7 @@ class EventViewSet(ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     permission_classes = [IsAdminUserGroup]
-
+    http_method_names = ["get","post"]
 
 
 class AlertViewSet(ModelViewSet):

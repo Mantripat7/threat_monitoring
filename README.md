@@ -19,7 +19,6 @@ The system is designed with a security-first mindset and supports role-based acc
 
 
 ## Tech Stack
-- Python
 - Django
 - Django REST Framework
 - SQLite
